@@ -20,7 +20,8 @@ app.use('/escritorio', express.static('desktop'));
 //registo ejs como motor de plantilla
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views/vistas'))
-
+// tuve que poner dos puntos porq el dirname me lleva desde src afuera 
+//y necesito que entre a mi views
 
 app.get('/ejs', (req, res) => {
     res.render('bienvenidos')
