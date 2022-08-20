@@ -1,6 +1,7 @@
 const path = require('path')
 
 const express = require('express');
+const { application } = require('express');
 const app = express();
 
 
@@ -15,6 +16,15 @@ app.use('/busqueda', express.static('publica'));
 app.use('/celular', express.static('mobile'));
 
 app.use('/escritorio', express.static('desktop'));
+
+//registo ejs como motor de plantilla
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, '../views/vistas'))
+
+
+app.get('/ejs', (req, res) => {
+    res.render('bienvenidos')
+})
 
 app.get('/', (req, res) => {
     res.send('Bienvenidos a la Pagina Principal')
