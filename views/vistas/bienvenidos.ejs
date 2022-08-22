@@ -8,7 +8,9 @@
 </head>
 <body style="background-color: black;">
                                                                         
-    <h1 style="color: white; ">Hola son un archivo html desde EJS, me comparte <%= usuario.name %> </h1>
+    <h1 style="color: white; ">Hola son un archivo html desde EJS, me comparte <% if (usuario.name = 'leandro') { %>
+            <h1 style="color: white; ">**<%=usuario.name%>**</h1>
+        <%} %>
 
     <h1 style="color: white">Lista de Usuarios</h1>
 
@@ -18,6 +20,20 @@
              <p style="color: white"><%=user.name%> => <%= user.email%></p>
 
     <% }) %>
+
+<h1 style="color: white">Usuarios de Gmail</h1>
+
+<% usuario.forEach(user => { %>
+    <% if ( user.email != 'faustorossa13@hotmail.com') {%>
+           <p style="color: white"><%= user.name%> - <%= user.email%></p>
+        <%}%>
+<% }) %>
+
+<h1 style="color: white">Usuarios de hombres</h1>
+
+<% usuario.forEach(user => { %>
+    <%- user.email != 'rominalora83@gmail.com' ? '<p style="color: white,"> ${user.name} - ${user.email} </p>' : ''%>
+<% }) %>
 
 
 

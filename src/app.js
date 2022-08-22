@@ -38,7 +38,7 @@ app.get('/ejs1', (req, res) => {
         email: "rominalora83@gmail.com"
     },
     {name: "Fausto",
-        email: "faustorossa13@gmail.com"
+        email: "faustorossa13@hotmail.com"
     },
     {name: "genaro",
         email: "genarorossa87@gmail.com"
