@@ -1,9 +1,9 @@
 const path = require('path')
 
 const express = require('express');
-const { application } = require('express');
 const app = express();
 
+const { application } = require('express');
 
 //de esta forma ingresa a la carpeta public en el buscargor ponemos
 //directamente el archivo sin nombrar la carpeta
@@ -23,9 +23,13 @@ app.set('views', path.join(__dirname, '../views/vistas'))
 // tuve que poner dos puntos porq el dirname me lleva desde src afuera 
 //y necesito que entre a mi views
 
+app.get('/', (req, res) => {
+    res.send('Bienvenidos a la Pagina Principal')
+});
+
 app.get('/ejs', (req, res) => {
     res.render('bienvenidos')
-})
+});
 
 app.get('/ejs1', (req, res) => {
     
@@ -48,9 +52,6 @@ app.get('/ejs1', (req, res) => {
 
 })
 
-app.get('/', (req, res) => {
-    res.send('Bienvenidos a la Pagina Principal')
-});
-
+app.use(require('./routes/products'))
 
 app.listen(3000, ()=> console.log("Proyecto en el puerto 3000"));
