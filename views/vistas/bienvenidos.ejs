@@ -7,6 +7,19 @@
     <title>HOLA</title>
 </head>
 <body style="background-color: black;">
-    <h1 style="color: white; ">Hola son un archivo html desde EJS</h1>
+                                                                        
+    <h1 style="color: white; ">Hola son un archivo html desde EJS, me comparte <%= usuario.name %> </h1>
+
+    <h1 style="color: white">Lista de Usuarios</h1>
+
+    /*tenemos que poner despues de ( del foreach el elemento que*/
+        /*va a definir cada elemento de nuestro objeto*/
+    <% usuario.forEach(user => { %>
+             <p style="color: white"><%=user.name%> => <%= user.email%></p>
+
+    <% }) %>
+
+
+
 </body>
 </html>

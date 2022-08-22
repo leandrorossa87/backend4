@@ -27,6 +27,27 @@ app.get('/ejs', (req, res) => {
     res.render('bienvenidos')
 })
 
+app.get('/ejs1', (req, res) => {
+    
+    res.render('bienvenidos', {
+    usuario:[ {
+        name: "leandro",
+        email: "leandrorossa87@gmail.com"
+    },
+       {name: "romi",
+        email: "rominalora83@gmail.com"
+    },
+    {name: "Fausto",
+        email: "faustorossa13@gmail.com"
+    },
+    {name: "genaro",
+        email: "genarorossa87@gmail.com"
+    }
+]
+});
+
+})
+
 app.get('/', (req, res) => {
     res.send('Bienvenidos a la Pagina Principal')
 });
