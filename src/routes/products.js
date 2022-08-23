@@ -7,5 +7,7 @@ app.get('/products', productControllers.getproducts);
 app.get('/products/:id', productControllers.getproduct)
 //busqueda con query//
 app.get('/products1', productControllers.searchproducts)
+//esta ruta no se suele hacer//
+//solamente las dos principales//
 
 module.exports = app;
