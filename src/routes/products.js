@@ -1,32 +1,11 @@
 const express = require('express');
+const productControllers = require('../controllers/product');
 const app = express();
 
-app.get('/products', (req, res) => {
-    
-   const products = [
-    {
-        id: 1,
-        title: "Reloj negro",
-        price: 1000,
-        is_offer: false
-    },
-    {
-        id: 1,
-        title: "Reloj Plata",
-        price: 2000,
-        is_offer: true
-    },
-    {
-        id: 1,
-        title: "Reloj oro",
-        price: 2500,
-        is_offer: false
-    }
-    
-];
-
-res.json(products);
-
-});
+app.get('/products', productControllers.getproducts);
+//busqueda con param//
+app.get('/products/:id', productControllers.getproduct)
+//busqueda con query//
+app.get('/products1', productControllers.searchproducts)
 
 module.exports = app;

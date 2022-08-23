@@ -31,27 +31,6 @@ app.get('/ejs', (req, res) => {
     res.render('bienvenidos')
 });
 
-app.get('/ejs1', (req, res) => {
-    
-    res.render('bienvenidos', {
-    usuario:[ {
-        name: "leandro",
-        email: "leandrorossa87@gmail.com"
-    },
-       {name: "romi",
-        email: "rominalora83@gmail.com"
-    },
-    {name: "Fausto",
-        email: "faustorossa13@hotmail.com"
-    },
-    {name: "genaro",
-        email: "genarorossa87@gmail.com"
-    }
-]
-});
-
-})
-
-app.use(require('./routes/products'))
+app.use('/api/v1', require('./routes/products'))
 
 app.listen(3000, ()=> console.log("Proyecto en el puerto 3000"));
