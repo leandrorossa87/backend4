@@ -28,7 +28,26 @@ app.get('/', (req, res) => {
 });
 
 app.get('/ejs', (req, res) => {
-    res.render('bienvenidos')
+    res.render('bienvenidos' ,{
+        usuario: [
+            {
+                name: "Leandro",
+                email: "leandrorossa87@gmail.com"
+            },
+            {
+                name: "romina",
+                email: "rominalora83@gmail.com"
+            },
+            {
+                name: "Fausto",
+                email: "faustorossa13@gmail.com"
+            },
+            {
+                name: "Genaro",
+                email: "genarorossa18@hotmail.com"
+            }
+        ]
+    })
 });
 
 app.use('/api/v1', require('./routes/products'))
