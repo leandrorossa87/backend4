@@ -38,6 +38,9 @@ const getproducts = (req, res) => {
 
 }
 
+//filtra por query//
+//en la barra de busqueda poner despues de productos//
+//?=id=1//
 const searchproducts = (req, res) => {
 
     const id = req.query.id
